@@ -1,0 +1,94 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-US'
+title = 'My New Hugo Site'
+theme = 'nomatron'
+
+
+########## Menus
+[menus]
+  ########## Main/Header
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 10
+
+  [[menus.main]]
+    name = "About"
+    pageRef = "/about/"
+    weight = 20
+
+  [[menus.main]]
+    name = "Waitlist"
+    pageRef = "/Waitlist/"
+    weight = 30
+
+  ########## Resources/Footer
+  [[menus.resources]]
+    name = 'Home'
+    url = '/'
+    weight = 10
+
+  [[menus.resources]]
+    name = 'About'
+    url = '/about/'
+    weight = 20
+
+  ########## Legal/Footer
+  [[menus.legal]]
+    name = 'Privacy Policy'
+    url = '/privacy-policy/'
+    weight = 10
+
+
+
+########## Params
+[params]
+  ########## header params
+  [params.header]
+    logo = "images/logo.svg"
+    [params.header.cta_btn]
+      label = "Join the waitlist"
+      link = "/"
+    
+  ########## footer params
+  [params.footer]
+    logo = "images/logo.svg"
+
+  ########## socials
+  [params.socials]
+    linkedin = "https://linkedin.com"
+    twitter = "https://x.com"
+    bluesky = "https://bsky.app"
+    instagram = "https://instagram.com"
+    youtube = "https://youtube.com"
+
+
+
+########## Modules
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
+  [[module.mounts]]
+    source = 'assets'
+    target = 'assets'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'hugo_stats.json'
+    target = 'assets/notwatching/hugo_stats.json'
+  [[module.mounts]]
+    disableWatch = true
+    source = 'node_modules/flowbite'
+    target = 'assets/css/flowbite'
+
+
+########## Tailwind Config
+[build]
+  [build.buildStats]
+    enable = true
+  [[build.cachebusters]]
+    source = 'assets/notwatching/hugo_stats\.json'
+    target = 'css'
+  [[build.cachebusters]]
+    source = '(postcss|tailwind)\.config\.js'
+    target = 'css'

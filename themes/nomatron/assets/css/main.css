@@ -1,0 +1,116 @@
+@import "tailwindcss";
+/* @import "./flowbite/src/themes/default.css";
+@plugin "flowbite/plugin";
+@source "./flowbite"; */
+@source "hugo_stats.json";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --color-primary: #0F403D;
+    --color-primary-light: #E0FFF4;
+    --color-primary-green: #6BEBCB;
+    --color-primary-dark: #000000;
+    --color-cloud: #EDEFF7;
+    --color-smoke: #D3D6E0;
+    --color-steel: #BCBFCC;
+    --color-space: #9DA2B3;
+    --color-graphite: #6E7180;
+    --color-arsenic: #40424D;
+    --color-phantom: #1E1E24;
+
+    --font-primary: "Poppins", sans-serif;
+}
+
+*::selection {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.hero-pattern {
+    background: radial-gradient(55.8% 55.49% at 50% 55.49%, #264d4c 0%, rgba(25, 48, 47, 0) 100%)
+}
+
+.bg-glass{
+  background: rgba(15, 15, 20, 0.6);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  z-index: 10;
+}
+
+@media (width >=64rem) {
+    .lg-no-glass {
+        background: none !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border: none !important;
+        box-shadow: none !important;
+    }
+}
+
+.beam-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0
+}
+
+.beam {
+    position: absolute;
+    left: -30%;
+    will-change: transform, opacity;
+    mix-blend-mode: screen;
+    filter: blur(12px) saturate(120%);
+    opacity: 0.2;
+    transform-origin: center;
+    --rot: 25deg;
+    --duration: 24s;
+    --delay: 0s;
+    --w: 30vw;
+    --h: 18vh;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.08) 40%, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.08) 60%, transparent 100%);
+    animation: slide var(--duration) linear infinite
+}
+
+.beam.narrow {
+    --w: 18vw;
+    --h: 12vh;
+    opacity: 0.15;
+    filter: blur(10px)
+}
+
+.beam.wide {
+    --w: 48vw;
+    --h: 28vh;
+    opacity: 0.1;
+    filter: blur(22px)
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(-220%) rotate(var(--rot))
+    }
+
+    to {
+        transform: translateX(220%) rotate(var(--rot))
+    }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.65;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+    .beam {
+        animation: none;
+        opacity: 0.06
+    }
+}

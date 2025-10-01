@@ -1,0 +1,4 @@
+name = "Nomatron"
+license = "Proprietary"
+description = "A custom Hugo theme with TailwindCSS"
+homepage = "https://mudassir-nawaz.github.io/nomatron/"

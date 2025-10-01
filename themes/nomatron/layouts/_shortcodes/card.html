@@ -1,0 +1,18 @@
+{{ if eq (.Get "isSocial") "true" }}
+<a href='{{ .Get "link" }}' target="_blank" class="p-5 md:p-10 bg-glass rounded-xl flex justify-center items-center flex-col text-white">
+    {{ with .Get "icon" }}
+    <i class='iconoir-{{ . }} text-7xl'></i>
+    {{ end }}
+    {{ with .Get "custom_icon" }}
+    {{ . }}
+    {{ end }}
+</a>
+{{ else }}
+<div class="bg-glass p-5 rounded-xl space-y-3">
+    <div class="flex items-center gap-3">
+        <i class='iconoir-{{ .Get "icon" }} text-3xl text-primary'></i>
+        <span class="text-xl font-semibold text-white font-primary">{{ .Get "title" }}</span>
+    </div>
+    <p class="font-primary text-white/80">{{ .Get "content" }}</p>
+</div>
+{{ end }}
