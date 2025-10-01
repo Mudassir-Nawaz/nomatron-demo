@@ -1,5 +1,5 @@
 {{ if eq .isLink "true" }}
 <a href="{{ .url }}" class="{{ .class }} inline-flex text-primary-light font-primary bg-glass border-0 font-medium rounded-xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">{{ .label }}</a>
 {{ else }}
-<button class="{{ .class }} cursor-pointer inline-flex text-primary-light font-primary bg-glass border-0 font-medium rounded-xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">{{ .label }}</button>
+<button {{ with .type }}type="{{ . }}"{{ end }} class="{{ .class }} cursor-pointer inline-flex text-primary-light font-primary bg-glass border-0 font-medium rounded-xl text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2">{{ .label }}</button>
 {{ end }}

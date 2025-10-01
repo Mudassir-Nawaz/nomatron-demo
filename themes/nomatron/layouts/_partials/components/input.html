@@ -1,5 +1,5 @@
 {{ if eq .type "textarea" }}
-<textarea {{ with .rows }}rows="{{ . }}"{{ end }} {{ with .cols }}cols="{{ . }}"{{ end }} {{ if eq .required "true" }}required{{ end }} id="{{ .id }}" class="{{ .class }} p-3 rounded-xl border focus:border-2 border-white/10 w-full font-primary" placeholder="{{ .placeholder }}"></textarea>
+<textarea name="{{ .name }}" {{ with .rows }}rows="{{ . }}"{{ end }} {{ with .cols }}cols="{{ . }}"{{ end }} {{ if eq .required "true" }}required{{ end }} id="{{ .id }}" class="{{ .class }} p-3 rounded-xl border focus:border-2 border-white/10 w-full font-primary" placeholder="{{ .placeholder }}"></textarea>
 {{ else }}
-<input {{ if eq .auto_off "true" }}autocomplete="off"{{ end }} {{ if eq .required "true" }}required{{ end }} id="{{ .id }}" type="{{ .type }}" class="{{ .class }} p-3 rounded-xl border focus:border-2 border-white/10 w-full font-primary" placeholder="{{ .placeholder }}">
+<input name="{{ .name }}" {{ if eq .auto_off "true" }}autocomplete="off"{{ end }} {{ if eq .required "true" }}required{{ end }} id="{{ .id }}" type="{{ .type }}" class="{{ .class }} p-3 rounded-xl border focus:border-2 border-white/10 w-full font-primary" placeholder="{{ .placeholder }}">
 {{ end }}

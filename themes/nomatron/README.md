@@ -106,6 +106,9 @@ theme = 'nomatron'
 
 ########## Params
 [params]
+  ########## favicon
+  favicon = "favicon.png"
+
   ########## header params
   [params.header]
     logo = "images/logo.svg"
