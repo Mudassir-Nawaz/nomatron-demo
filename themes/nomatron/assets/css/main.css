@@ -30,24 +30,25 @@
     background: radial-gradient(55.8% 55.49% at 50% 55.49%, #264d4c 0%, rgba(25, 48, 47, 0) 100%)
 }
 
-.bg-glass{
-  background: rgba(15, 15, 20, 0.8);
-  backdrop-filter: blur(28px) saturate(180%);
-  -webkit-backdrop-filter: blur(38px) saturate(180%);
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+.bg-glass {
+  background: rgba(10, 10, 15, 0.92); /* darker + less transparency */
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.7);
   z-index: 10;
 }
 
-@media (width >=64rem) {
-    .lg-no-glass {
-        background: none !important;
-        backdrop-filter: none !important;
-        -webkit-backdrop-filter: none !important;
-        border: none !important;
-        box-shadow: none !important;
-    }
+@media (width >= 64rem) {
+  .lg-no-glass {
+    background: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
 }
+
 
 .beam-bg {
     position: absolute;
