@@ -1,4 +1,4 @@
-<form action='{{ .Get "action" }}' netlify class='p-5 lg:p-10 bg-glass rounded-xl space-y-10 {{ if .Get "width" }}{{ .Get "width" }}{{ else }}md:w-1/2 lg:w-3/4{{ end }} mx-auto'>
+<form action="/thank-you/" netlify class='p-5 lg:p-10 bg-glass rounded-xl space-y-10 {{ if .Get "width" }}{{ .Get "width" }}{{ else }}md:w-1/2 lg:w-3/4{{ end }} mx-auto'>
     <div class="hidden">
             {{ partial "components/label.html" (dict "label" "Leave this field empty" "for" "hp") }}
             {{ partial "components/input.html" (dict "type" "text" "id" "hp" "name" "hp" "auto_off" "true" "class" "mt-3") }}

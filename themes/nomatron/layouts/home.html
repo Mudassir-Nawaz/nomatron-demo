@@ -5,7 +5,7 @@
     <div class="beam-bg" id="beamBg" aria-hidden="true"></div>
     <div class="bg-gradient-to-b from-25% from-transparent to-primary/40 absolute inset-0"></div>
     <div class="relative pt-20 lg:pt-40">
-      <div class="max-w-2xl mx-auto space-y-10">
+      <div class="max-w-4xl mx-auto space-y-10">
         <h1 class="text-center text-5xl font-primary text-balance font-medium tracking-tight text-white md:text-8xl leading-[125%] lg:leading-[105%]">{{ .title | safeHTML }}</h1>
         <p class="text-center text-xl font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
         <div class="flex flex-wrap gap-x-1 gap-y-5 justify-center">
@@ -36,7 +36,7 @@
         <p class="text-lg font-primary font-light text-balance text-primary-light leading-[150%] lg:max-w-xl justify-self-end">{{ .content | safeHTML }}</p>
       </div>
       <div class="max-w-7xl mx-auto">
-        <img src="{{ .image | relURL }}" alt="">
+        <img src="{{ .image | relURL }}" alt="" class="mx-auto">
       </div>
     </div>
   </section>
@@ -99,14 +99,17 @@
 
   {{/*  Enterprise  */}}
   {{ with .Params.enterprise }}
-  <section class="py-10 md:py-20 px-5  bg-gradient-to-t from-25% from-transparent to-primary/40">
+  <section class="py-10 md:py-20 px-5 bg-gradient-to-b from-25% from-transparent to-primary/40">
     <div class="container mx-auto space-y-20">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-5 gap-y-20 items-center">
-        <div class="max-w-5xl mx-auto space-y-10">
+        <div class="space-y-10 lg:col-span-2 ">
           <h2 class="text-3xl font-primary text-balance font-medium tracking-tight text-white md:text-5xl leading-[125%]">{{ .title | safeHTML }}</h2>
           <p class="text-lg font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
         </div>   
-        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-5 lg:max-w-4xl lg:justify-self-end">
+        <div class="{{ if .feature_cards }}grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-5{{ end }}">
+          {{ if .image }}
+          <img src="{{ .image | relURL }}" alt="" class="mx-auto">
+          {{ else if .feature_cards }}
           {{ range .feature_cards }}
           <div class="space-y-5">
             <div class="inline-flex justify-center items-center rounded-full size-12 bg-primary/80">
@@ -115,6 +118,7 @@
             <h4 class="text-xl font-semibold font-primary text-white">{{ .title | safeHTML }}</h4>
             <p class="text-sm font-primary text-white">{{ .content | safeHTML }}</p>
           </div>
+          {{ end }}
           {{ end }}
         </div>   
       </div>
@@ -150,15 +154,20 @@
 
   {{/*  Vision  */}}
   {{ with .Params.vision }}
-  <section class="px-5  py-10 md:py-20">
+  <section class="px-5  py-10 md:py-20 bg-gradient-to-t from-25% from-transparent to-primary/40">
     <div class="container mx-auto space-y-20">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-10 items-center justify-between">
         <h2 class="text-3xl font-primary text-balance font-medium tracking-tight text-white md:text-5xl leading-[125%] lg:max-w-xl">{{ .title | safeHTML }}</h2>
         <p class="text-lg font-primary font-light text-balance text-primary-light leading-[150%] lg:max-w-xl justify-self-end">{{ .content | safeHTML }}</p>
       </div>
       <div class="max-w-7xl mx-auto">
-        <img src="{{ .image | relURL }}" alt="">
+        <img src="{{ .image | relURL }}" alt="" class="mx-auto">
       </div>
+      {{ with .extra_content }}
+      <div class="text-lg font-primary font-light text-balance text-primary-light leading-[150%]">
+        {{ . | safeHTML }}
+      </div>
+      {{ end }}
     </div>
   </section>
   {{ end }}
