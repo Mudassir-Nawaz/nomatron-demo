@@ -51,7 +51,7 @@ theme = 'nomatron'
     logo = "images/logo.svg"
     [params.header.cta_btn]
       label = "Join the waitlist"
-      link = "/"
+      link = "/waitlist/"
     
   ########## footer params
   [params.footer]

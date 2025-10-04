@@ -10,7 +10,7 @@ hero:
     image: "images/dash-ss.png"
     cta_btn: 
         label: Join the Waitlist
-        link: /
+        link: /waitlist/
 
 
 ################ Problem
@@ -71,5 +71,5 @@ cta:
     title: "Start simplifying your Nomad workflows today"
     button:
         label: "Join the Waitlist"
-        link: /
+        link: /waitlist/
 ---
