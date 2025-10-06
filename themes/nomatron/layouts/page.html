@@ -1,17 +1,18 @@
 {{ define "main" }}
 <section class="relative overflow-hidden">
-    <div class="bg-gradient-to-b from-25% from-transparent to-primary/40 absolute inset-0"></div>
     <div class="relative pt-20 lg:pt-40">
       <div class="container mx-auto px-5 space-y-10">
-        <h1 class="text-5xl font-primary text-balance font-medium tracking-tight text-white md:text-8xl leading-[125%] lg:leading-[105%]">{{ .Title | safeHTML }}</h1>
-        <p class="font-primary font-semibold text-primary-green">Last Updated: {{ .Date | time.Format ":date_medium" }}</p>
-        <p class="text-xl font-primary font-light text-balance text-primary-light leading-[150%]">{{ .Description | safeHTML  }}</p>
+        <h1 class="{{ if .Params.text_center }}text-center{{ end }} text-4xl font-primary text-balance font-bold tracking-tight text-white leading-[125%] lg:leading-[105%]">{{ .Title | safeHTML }}</h1>
+        {{ with .Date }}
+        <p class="{{ if $.Params.text_center }}text-center{{ end }} font-primary font-semibold text-primary-green">Last Updated: {{ . | time.Format ":date_medium" }}</p>
+        {{ end }}
+        <p class="{{ if .Params.text_center }}text-center{{ end }} font-primary font-bold text-balance text-primary-light leading-[150%]">{{ .Description | safeHTML  }}</p>
       </div>
     </div>
   </section>
-  <section class="bg-gradient-to-t from-25% from-transparent to-primary/40">
+  <section>
     <div class="container mx-auto px-5 {{ if .Description }}py-10 md:py-20{{ else }}pb-20{{ end }}">
-      <article class="prose prose-invert max-w-none font-primary">
+      <article class="prose prose-invert max-w-none font-primary {{ if .Params.text_center }}text-center{{ end }}">
         {{ .Content }}
       </article>
     </div>

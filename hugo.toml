@@ -8,18 +8,20 @@ theme = 'nomatron'
 [menus]
   ########## Main/Header
   [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
-    weight = 10
+  name = 'Home'
+  pageRef = '/'
+  weight = 10
 
   [[menus.main]]
     name = "About"
     pageRef = "/about/"
     weight = 20
 
+  # Anchor link — do NOT use pageRef here
   [[menus.main]]
-    name = "Waitlist"
-    pageRef = "/Waitlist/"
+    name = "Our Vision"
+    url = "/#vision"
+    identifier = "our-vision"
     weight = 30
 
   ########## Resources/Footer

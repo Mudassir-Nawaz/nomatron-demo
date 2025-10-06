@@ -3,11 +3,10 @@
   {{ with .Params.hero }}
   <section class="px-5  relative overflow-hidden">
     <div class="beam-bg" id="beamBg" aria-hidden="true"></div>
-    <div class="bg-gradient-to-b from-25% from-transparent to-primary/40 absolute inset-0"></div>
     <div class="relative pt-20 lg:pt-40">
       <div class="max-w-4xl mx-auto space-y-10">
-        <h1 class="text-center text-5xl font-primary text-balance font-medium tracking-tight text-white md:text-8xl leading-[125%] lg:leading-[105%]">{{ .title | safeHTML }}</h1>
-        <p class="text-center text-xl font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
+        <h1 class="text-center text-4xl font-primary text-balance font-bold tracking-tight text-white leading-[125%] lg:leading-[105%]">{{ .title | safeHTML }}</h1>
+        <p class="text-center text-lg font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
         <div class="flex flex-wrap gap-x-1 gap-y-5 justify-center">
           {{ with .cta_btn }}
           {{ partial "components/button.html" (dict "isLink" "true" "label" .label "url" .link ) }}
@@ -29,11 +28,11 @@
 
   {{/*  Problem  */}}
   {{ with .Params.problem }}
-  <section class="bg-gradient-to-t from-25% from-transparent to-primary/40 pt-10 md:pt-20">
+  <section class="pt-10 md:pt-20">
     <div class="px-5  py-20 container mx-auto space-y-20">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-10 items-center justify-between">
-        <h2 class="text-3xl font-primary text-balance font-medium tracking-tight text-white md:text-5xl leading-[125%] lg:max-w-xl">{{ .title | safeHTML }}</h2>
-        <p class="text-lg font-primary font-light text-balance text-primary-light leading-[150%] lg:max-w-xl justify-self-end">{{ .content | safeHTML }}</p>
+        <h2 class="text-4xl font-primary text-balance font-bold tracking-tight text-white leading-[125%] lg:max-w-xl">{{ .title | safeHTML }}</h2>
+        <div class="font-primary font-light text-balance text-primary-light leading-[165%] lg:max-w-xl justify-self-end">{{ .content | safeHTML }}</div>
       </div>
       <div class="max-w-7xl mx-auto">
         <img src="{{ .image | relURL }}" alt="" class="mx-auto">
@@ -48,8 +47,8 @@
   <section class="py-10 md:py-20 px-5 ">
     <div class="container mx-auto space-y-20">
       <div class="lg:max-w-5xl mx-auto space-y-10">
-        <h2 class="lg:text-center text-3xl font-primary text-balance font-medium tracking-tight text-white md:text-5xl leading-[125%]">{{ .title | safeHTML }}</h2>
-        <p class="lg:text-center text-lg font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
+        <h2 class="lg:text-center text-4xl font-primary text-balance font-bold tracking-tight text-white leading-[125%]">{{ .title | safeHTML }}</h2>
+        <p class="lg:text-center font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
       </div>
       <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
         {{ range .cards }}
@@ -70,13 +69,13 @@
 
   {{/*  Audience  */}}
   {{ with .Params.audience }}
-  <section class="py-10 md:py-20 px-5  bg-gradient-to-b from-25% from-transparent to-primary/40">
+  <section class="py-10 md:py-20 px-5">
     <div class="container mx-auto space-y-20">
       {{ range .teams }}
       <div class="space-y-20">
         <div class="lg:max-w-5xl mx-auto space-y-10">
-          <h2 class="lg:text-center text-3xl font-primary text-balance font-medium tracking-tight text-white md:text-5xl leading-[125%]">{{ .title | safeHTML }}</h2>
-          <p class="lg:text-center text-lg font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
+          <h2 class="lg:text-center text-4xl font-primary text-balance font-bold tracking-tight text-white leading-[125%]">{{ .title | safeHTML }}</h2>
+          <p class="lg:text-center font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
           {{ range .cards }}
@@ -99,12 +98,12 @@
 
   {{/*  Enterprise  */}}
   {{ with .Params.enterprise }}
-  <section class="py-10 md:py-20 px-5 bg-gradient-to-b from-25% from-transparent to-primary/40">
+  <section class="py-10 md:py-20 px-5">
     <div class="container mx-auto space-y-20">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-x-5 gap-y-20 items-center">
         <div class="space-y-10 lg:col-span-2 ">
-          <h2 class="text-3xl font-primary text-balance font-medium tracking-tight text-white md:text-5xl leading-[125%]">{{ .title | safeHTML }}</h2>
-          <p class="text-lg font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
+          <h1 class="text-4xl font-primary text-balance font-bold tracking-tight text-white leading-[125%]">{{ .title | safeHTML }}</h1>
+          <p class="font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
         </div>   
         <div class="{{ if .feature_cards }}grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-5{{ end }}">
           {{ if .image }}
@@ -123,21 +122,16 @@
         </div>   
       </div>
 
-      <div class="overflow-hidden relative">
-        <!-- First Circle -->
-        <div class="absolute top-10 left-3/4 rounded-full size-60 bg-radial 
-                    from-10% to-90% from-primary-green to-primary-green/10 
-                    blur-2xl opacity-70 
-                    animate-[pulseGlow_4s_ease-in-out_infinite]"></div>
-
-        <!-- Second Circle -->
-        <div class="absolute bottom-0 left-0 md:left-1/4 rounded-full size-90 bg-radial 
-                    from-10% to-90% from-primary-green to-primary-green/10 
-                    blur-2xl opacity-70 
-                    animate-[pulseGlow_6s_ease-in-out_infinite]"></div>
-        <div class="bg-glass p-10 rounded-xl relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
+      {{ with .cards_section }}
+        <div class="space-y-10 lg:col-span-2 mt-40 mb-10">
+          <h1 class="text-4xl font-primary text-balance font-bold tracking-tight text-white leading-[125%]">{{ .title | safeHTML }}</h1>
+          <p class="font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
+        </div> 
+      {{ end }}
+      <div class="overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-20">
           {{ range .cards }}
-          <div class="space-y-5">
+          <div class="space-y-5 bg-glass p-3 md:p-5 rounded-xl">
             <div class="inline-flex justify-center items-center rounded-full size-12 bg-primary/80">
               <i class="iconoir-{{ .icon }} text-3xl text-white"></i>
             </div>
@@ -154,18 +148,21 @@
 
   {{/*  Vision  */}}
   {{ with .Params.vision }}
-  <section class="px-5  py-10 md:py-20 bg-gradient-to-t from-25% from-transparent to-primary/40">
+  <section class="px-5 py-10 md:py-20 scroll-mt-10 lg:scroll-mt-0" id="vision">
     <div class="container mx-auto space-y-20">
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-10 items-center justify-between">
-        <h2 class="text-3xl font-primary text-balance font-medium tracking-tight text-white md:text-5xl leading-[125%] lg:max-w-xl">{{ .title | safeHTML }}</h2>
-        <p class="text-lg font-primary font-light text-balance text-primary-light leading-[150%] lg:max-w-xl justify-self-end">{{ .content | safeHTML }}</p>
+      <div class="space-y-10">
+        <h2 class="text-4xl font-primary text-balance font-bold tracking-tight text-white leading-[125%]">{{ .title | safeHTML }}</h2>
+        <p class="font-primary font-light text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
       </div>
       <div class="max-w-7xl mx-auto">
         <img src="{{ .image | relURL }}" alt="" class="mx-auto">
       </div>
       {{ with .extra_content }}
-      <div class="text-lg font-primary font-light text-balance text-primary-light leading-[150%]">
-        {{ . | safeHTML }}
+      <div class="space-y-10">
+        <h2 class="text-4xl font-primary text-balance font-medium tracking-tight text-white leading-[125%]">{{ .title | safeHTML }}</h2>
+        {{ with .content }}
+        <div class="font-primary font-light text-primary-light leading-[150%]">{{ . | safeHTML }}</div>
+        {{ end }}
       </div>
       {{ end }}
     </div>
@@ -176,9 +173,9 @@
   {{/*  CTA  */}}
   {{ with .Params.cta }}
   <section class="container mx-auto bg-primary-green rounded-xl p-5 lg:p-10 mt-20">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
         <h3 class="text-3xl font-primary text-balance font-medium tracking-tight text-primary-dark md:text-5xl leading-[125%]">{{ .title | safeHTML }}</h3>
-        <div class="flex md:justify-end">
+        <div class="flex lg:justify-end">
           {{ with .button }}
           {{ partial "components/glass_button.html" (dict "isLink" "true" "label" .label "url" .link) }}
           {{ end }}

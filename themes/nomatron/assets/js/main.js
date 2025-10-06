@@ -23,14 +23,35 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.classList.toggle('-translate-y-[100vh]');
         menu.classList.toggle('pointer-events-none');
         document.children[0].classList.toggle('overflow-hidden');
-
+        
         menuMark.children[0].classList.toggle('absolute');
         menuMark.children[0].classList.toggle('rotate-45');
         menuMark.children[0].classList.toggle('-translate-x-1/2');
-
+        
         menuMark.children[1].classList.toggle('absolute');
         menuMark.children[1].classList.toggle('-rotate-45');
         menuMark.children[1].classList.toggle('-translate-x-1/2');
+
+        menuToggler.dataset.isMenu = menuToggler.dataset.isMenu === "true" ? "false" : "true";
+    });
+
+    document.addEventListener('scroll', () => {
+        if (menuToggler.dataset.isMenu === "true") {
+            menu.classList.add('opacity-0');
+            menu.classList.add('-translate-y-[100vh]');
+            menu.classList.add('pointer-events-none');
+            document.children[0].classList.remove('overflow-hidden');
+            
+            menuMark.children[0].classList.remove('absolute');
+            menuMark.children[0].classList.remove('rotate-45');
+            menuMark.children[0].classList.remove('-translate-x-1/2');
+            
+            menuMark.children[1].classList.remove('absolute');
+            menuMark.children[1].classList.remove('-rotate-45');
+            menuMark.children[1].classList.remove('-translate-x-1/2');
+
+            menuToggler.dataset.isMenu = "false";
+        }
     });
 
     (function () {

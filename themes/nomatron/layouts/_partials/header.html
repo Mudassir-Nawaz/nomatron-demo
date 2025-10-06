@@ -8,7 +8,7 @@
                 {{ with site.Params.header.cta_btn }}
                 {{ partial "components/button.html" (dict "isLink" "true" "label" .label "url" .link) }}
                 {{ end }}
-                <button id="menu-toggler" type="button" class="flex justify-center items-center h-10 w-10 text-sm text-gray-500 rounded-lg lg:hidden" aria-controls="mobile-menu-2" aria-expanded="false">
+                <button data-is-menu="false" id="menu-toggler" type="button" class="flex justify-center items-center h-10 w-10 text-sm text-gray-500 rounded-lg lg:hidden" aria-controls="mobile-menu-2" aria-expanded="false">
                     <div class="space-y-1.5 relative" id="menu-mark">
                         <div class="h-0.5 w-5 bg-white rounded-lg top-1/2 left-1/2 origin-center transition"></div>
                         <div class="h-0.5 w-5 bg-white rounded-lg top-1/2 left-1/2 origin-center transition"></div>
@@ -17,20 +17,10 @@
             </div>
             <div class="bg-glass lg-no-glass absolute top-12 left-0 right-0 lg:static lg:bg-none pointer-events-none lg:pointer-events-auto min-h-screen lg:min-h-auto opacity-0 lg:opacity-100 -translate-y-[100vh] lg:translate-0 transition-opacity duration-300 justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="menu">
                 <ul class="flex flex-col font-medium lg:flex-row space-y-8 lg:space-y-0 pt-10 lg:pt-0 lg:space-x-8 px-3">
-                    {{ $current := . }}
-                    {{ range $i, $p := site.Menus.main }}
-                    {{ $menu := .URL | absURL }}
-                    {{ $page := $current.RelPermalink | absURL }}
-                    {{ $active := eq $menu $page }}
-                    {{ if $active }}
-                    <li>
-                        <a href="{{ .URL }}" class="font-primary font-light block pr-4 pl-3 text-primary-green" aria-current="page">{{ .Title }}</a>
-                    </li>
-                    {{ else }}
-                    <li>
-                        <a href="{{ .URL }}" class="font-primary font-light block pr-4 pl-3 text-gray-400 lg:hover:text-white transition-colors">{{ .Title }}</a>
-                    </li>
-                    {{ end }}
+                    {{ range site.Menus.main }}
+                    <a href="{{ .URL }}" class="font-primary font-light block pr-4 pl-3 transition-colors text-gray-300 lg:hover:text-white">
+                        {{ .Name }}
+                    </a>
                     {{ end }}
                 </ul>
             </div>

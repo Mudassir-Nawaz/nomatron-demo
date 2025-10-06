@@ -1,9 +1,7 @@
 ---
 title: Thank you
 description: We’ve received your request to join the early access waitlist.
+text_center: true
 ---
 Follow us on:
-{{< cards >}}
-{{< card isSocial="true" link="https://instagram.com" icon="instagram" >}}
-{{< card isSocial="true" link="https://linkedin.com" icon="linkedin" >}}
-{{< /cards >}}
+{{< socials instagram="https://instagram.com" twitter="https://x.com" linkedin="https://linkedin.com" bluesky="https://bsky.app" youtube="https://youtube.com" >}}

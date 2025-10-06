@@ -18,12 +18,12 @@
     --color-arsenic: #40424D;
     --color-phantom: #1E1E24;
 
-    --font-primary: "Poppins", sans-serif;
+    --font-primary: "Manrope", sans-serif;
 }
 
 *::selection {
-    background-color: var(--color-primary);
-    color: white;
+    background-color: var(--color-primary-green);
+    color: var(--color-primary-dark);
 }
 
 .hero-pattern {
