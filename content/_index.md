@@ -9,8 +9,11 @@ hero:
     content: "Nomatron is the control plane for Nomad.  Secure, Git-driven, and built to scale."
     image: "images/dash-ss.png"
     cta_btn: 
-        label: Join the Waitlist
-        link: /waitlist/
+        label: "Join the Waitlist"
+        link: "/waitlist/"
+    contact_btn:
+        label: "Contact Us"
+        link: "mailto:founders@nomatron.io"
 
 
 ################ Problem

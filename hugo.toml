@@ -35,6 +35,11 @@ theme = 'nomatron'
     url = '/about/'
     weight = 20
 
+  [[menus.resources]]
+    name = 'Contact Us'
+    url = 'mailto:founders@nomatron.io'
+    weight = 30
+
   ########## Legal/Footer
   [[menus.legal]]
     name = 'Privacy Policy'
