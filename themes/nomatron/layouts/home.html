@@ -7,7 +7,7 @@
       <div class="max-w-4xl mx-auto space-y-10">
         <h1 class="text-center text-4xl font-primary text-balance font-bold tracking-tight text-white leading-[125%] lg:leading-[105%]">{{ .title | safeHTML }}</h1>
         <p class="text-center text-lg font-primary font-light text-balance text-primary-light leading-[150%]">{{ .content | safeHTML }}</p>
-        <div class="flex flex-wrap gap-x-1 gap-y-5 justify-center">
+        <div class="flex flex-wrap gap-x-3 gap-y-5 justify-center">
           {{ with .cta_btn }}
           {{ partial "components/button.html" (dict "isLink" "true" "label" .label "url" .link ) }}
           {{ end }}
