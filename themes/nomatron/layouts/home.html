@@ -133,7 +133,7 @@
           {{ range .cards }}
           <div class="space-y-5 bg-glass p-3 md:p-5 rounded-xl">
             <div class="inline-flex justify-center items-center rounded-full size-12 bg-primary/80">
-              <i class="iconoir-{{ .icon }} text-3xl text-white"></i>
+              <img src="{{ .icon | relURL }}" class="size-8">
             </div>
             <h4 class="text-xl font-semibold font-primary text-white">{{ .title | safeHTML }}</h4>
             <p class="text-sm font-primary text-white">{{ .content | safeHTML }}</p>
